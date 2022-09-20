@@ -10,18 +10,6 @@ Collection of basic funtion/requremnt for creating flutter app
 import 'package:gt_basicbundle/gt_basicbundle.dart';
 ```
 
-# RegExp
-
-## Some Regular Exp
-
-```dart
-gtexpNameAllow
-gtexpTextAllow
-gtextTextIntAllowWithoutspace
-gtexpIntAllow
-gtexpdoubleAllow
-```
-
 # Dialogues
 
 ## Some Most Used dialogues
@@ -160,8 +148,7 @@ String custumDateFormat(String fomat) /// Return Date in your format or -
     Color? color,
     int? maxline,
     TextAlign? textAlign,
-    int? weight,
-    bool speak = true,
+    int? weight  
   )
 
   void get  gtShowtost
@@ -303,6 +290,18 @@ AnimatedListTile(
 ```
 
 
+
+# RegExp
+
+## Some Regular Exp
+
+```dart
+gtexpNameAllow
+gtexpTextAllow
+gtextTextIntAllowWithoutspace
+gtexpIntAllow
+gtexpdoubleAllow
+```
 
 
 ## Additional information

@@ -44,14 +44,12 @@ extension KdStringExt on String {
     );
   }
 
-  Widget gtTextbody({
-    double? size,
-    Color? color,
-    int? maxline,
-    TextAlign? textAlign,
-    int? weight,
-    bool speak = true,
-  }) {
+  Widget gtTextbody(
+      {double? size,
+      Color? color,
+      int? maxline,
+      TextAlign? textAlign,
+      int? weight}) {
     return Text(
       this,
       maxLines: maxline,
