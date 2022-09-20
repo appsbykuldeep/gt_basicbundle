@@ -20,7 +20,7 @@ extension KdStringExt on String {
     );
   }
 
-  gtApptitelWithRange({DateTimeRange? date}) {
+  Widget gtApptitelWithRange({DateTimeRange? date}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
