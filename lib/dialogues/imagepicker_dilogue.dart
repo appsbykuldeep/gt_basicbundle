@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:gt_basicbundle/constants/custum_library.dart';
 import 'package:gt_basicbundle/models/filepicker_model.dart';
@@ -7,6 +6,7 @@ import 'package:gt_basicbundle/models/filepicker_model.dart';
 gtShowImagePickerSheet({
   required Function(GtFilePickerModel data) ontap,
   bool compress = true,
+  int compressQuality = 85,
 }) {
   Get.bottomSheet(
     Container(
@@ -42,7 +42,7 @@ gtShowImagePickerSheet({
                     ClipRRect(
                         borderRadius: BorderRadius.circular(50),
                         child: Image.asset(
-                          "",
+                          "assets/icons/cameraicon.png",
                           height: 100,
                           fit: BoxFit.cover,
                         )),
@@ -54,7 +54,10 @@ gtShowImagePickerSheet({
                 onTap: () async {
                   Get.back();
                   GtFilePickerModel data = await runimagePicker(
-                      fromcamera: false, compress: compress);
+                    fromcamera: false,
+                    compress: compress,
+                    compressQuality: compressQuality,
+                  );
                   ontap(data);
                 },
                 child: Expanded(
@@ -63,7 +66,7 @@ gtShowImagePickerSheet({
                     ClipRRect(
                         borderRadius: BorderRadius.circular(50),
                         child: Image.asset(
-                          "",
+                          "assets/icons/gallaryicon.png",
                           height: 100,
                           fit: BoxFit.cover,
                         )),
@@ -117,7 +120,7 @@ Future<GtFilePickerModel> runimagePicker({
           pickedimagepath = result.path;
         }
       } catch (e) {
-        debugPrint("compressAndGetFile : $e");
+        data.errorMessage = e.toString();
       }
       if (showloading) {
         Get.back();
@@ -126,51 +129,18 @@ Future<GtFilePickerModel> runimagePicker({
 
     if (pickedimagepath.isNotEmpty) {
       try {
-        final filedata = File(pickedimagepath);
-        List<int> fileint = filedata.readAsBytesSync();
-        String base64 = base64Encode(fileint);
         data.status = true;
-        data.fileName = file.name.replaceAll("image_picker", "upsrlm");
+        data.fileName = file.name.replaceAll("image_picker", "image");
         data.filePath = file.path;
-        data.listInt = filedata.readAsBytesSync();
-        data.base64File = base64;
         data.extension = file.path.gtFileExt;
       } catch (e) {
         debugPrint("runimagePicker ::$e");
-        'Something is wrong\nPlease try again...'.gtShowtost;
       }
-    } else {
-      'File path not found.'.gtShowtost;
-    }
+    } else {}
   }
 
   return data;
 }
-
-// Future<FilePickerModel> trycompressImageFile({
-//   required FilePickerModel data,
-// }) async {
-//   try {
-//     final _compPath = await getTemporaryDirectory();
-//     CompressObject compressObject = CompressObject(
-//       imageFile: File(data.filePath),
-//       path: _compPath.path,
-//       quality: 85,
-//       step: 9,
-//       mode: CompressMode.LARGE2SMALL,
-//     );
-
-//     String compresspath = await Luban.compressImage(compressObject) ?? '';
-
-//     if (compresspath.isNotEmpty) {
-//       data.filePath = compresspath;
-//       data.fileName = compresspath.split("/").last;
-//     }
-//     return data;
-//   } catch (e) {
-//     return data;
-//   }
-// }
 
 Future<GtFilePickerModel> trycompressImageFile({
   required GtFilePickerModel data,

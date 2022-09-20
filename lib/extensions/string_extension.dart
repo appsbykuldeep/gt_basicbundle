@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gt_basicbundle/extensions/dynamic_extension.dart';
@@ -96,6 +99,28 @@ extension KdStringExt on String {
       return parts.last;
     }
     return "";
+  }
+
+  Future<List<int>> get gtUnit8ListByPath async {
+    final file = File(this);
+    if (await file.exists()) {
+      return file.readAsBytesSync();
+    } else {
+      return [];
+    }
+  }
+
+  Future<String> get gtBase64ByPath async {
+    final file = File(this);
+    if (await file.exists()) {
+      return base64Encode(file.readAsBytesSync());
+    } else {
+      return "";
+    }
+  }
+
+  Future<bool> get gtIsFileExists async {
+    return await File(this).exists();
   }
 
   // String get attachBaseApi {

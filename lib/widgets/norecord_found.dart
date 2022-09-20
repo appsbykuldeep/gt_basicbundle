@@ -29,7 +29,7 @@ class NoRecordFound extends StatelessWidget {
               width: 50,
               child: const CircularProgressIndicator()),
           firstChild: Image.asset(
-            "",
+            "assets/icons/no_record.png",
             height: 200,
             width: 400,
             fit: BoxFit.cover,

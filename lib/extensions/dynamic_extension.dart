@@ -88,6 +88,10 @@ extension GTDynamicExtn on dynamic {
 
   String get gtDateapiformat => _setdatedata("dd/MM/yyyy");
 
+  String custumDateFormat(String fomat) {
+    return _setdatedata(fomat);
+  }
+
   String _setdatedata(String format) {
     String showdate = "";
     final type = DateFormat(format, "en_US");

@@ -38,8 +38,7 @@ class _PhotoViewerState extends State<PhotoViewer> {
         imageProvider: NetworkImage(widget.url),
         customSize: Size(Get.width, Get.height),
         errorBuilder: (context, _, __) {
-          return Center(
-              child: Image.asset('assets/icons/pngfiles/image_not_found.png'));
+          return Center(child: Image.asset('assets/icons/no_record.png'));
         },
         loadingBuilder: (context, status) {
           loadperce.value = (((status?.cumulativeBytesLoaded ?? 0) /
@@ -99,7 +98,7 @@ class _NotFoundImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      "",
+      "assets/icons/no_record.png",
       fit: BoxFit.cover,
     );
   }

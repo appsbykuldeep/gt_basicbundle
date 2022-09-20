@@ -33,7 +33,7 @@ gtShowLoading({
                       ClipRRect(
                         borderRadius: BorderRadius.circular(50),
                         child: Image.asset(
-                          "",
+                          "assets/icons/loading.gif",
                           height: 100,
                           fit: BoxFit.cover,
                         ),

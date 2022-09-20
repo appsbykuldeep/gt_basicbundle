@@ -1,5 +1,10 @@
 
-TODO: Collection of basic funtion/requremnt for creating flutter app
+Collection of basic funtion/requremnt for creating flutter app
+
+
+## Note :  Use GetMaterialApp For Error Free Experience
+
+
 ## Installation
 ```dart
 import 'package:gt_basicbundle/gt_basicbundle.dart';
@@ -79,35 +84,36 @@ Future<DateTimeRange?> gtShowDateRangePickerDilogue(
 
 ## Color Extensions
 ```dart
-gtsetStatusBarColor
+void gtsetStatusBarColor /// Changes Status Bar Color
 ```
 
 ## BuildContext Extensions
 ```dart
-gtHideKeys()
+gtHideKeys() /// Hining Keyboard
 
-gtShowKeys()
+gtShowKeys() /// Showing Keyboard
 ```
 
 ## dynamic Extensions
 ```dart
-togtdouble
+Double togtdouble  //! retruns 0 on null
 
-togtint
+int togtint  //! retruns 0 on null
 
-togtString
+String togtString  //! retruns e"" on null
 
-spelling
+String spelling   //! retruns Spelling of number
 
-gtDelay
+Future<void> gtDelay   //! Use it for create delay
 
-isString
+// Data Run Type
+bool isString   
 
-isint
+bool isint
 
-isdouble
+bool isdouble
 
-isList
+bool isList
 
 Widget gtAnimateNumber( String? family,
       double fontsize = 12,
@@ -117,25 +123,29 @@ Widget gtAnimateNumber( String? family,
       Alignment alignment = Alignment.centerLeft,
       Duration duration = const Duration(milliseconds: 400)) 
 
-gtCurrencyText
+Sring gtCurrencyText  /// Return in ₹ ##,##,###.## format
 
-gtThousentText
+Sring gtThousentText  /// Return in ##,##,###.## format
 
-gtDateddMMyyformat
+/// Use Below functions on Datetime
 
-gtDateddmmyyyyhmformat
+Sring gtDateddMMyyformat  /// Return Date in dd-MMM-yyy or -
 
-gtTimehhmmformat
+Sring gtDateddmmyyyyhmformat  /// Return Date in dd-MMM-yyy hh:mm a or -
 
-gtTimehhmmAPformat
+Sring gtTimehhmmformat  /// Return Date in hh:mm or -
 
-gtDatemmmyyyyformat
+Sring gtTimehhmmAPformat  /// Return Date in hh:mm a or -
 
-gtDatemmmmyyyyformat
+Sring gtDatemmmyyyyformat  /// Return Date in MMM-yyy or -
 
-datemmmmformat
+Sring gtDatemmmmyyyyformat  /// Return Date in MMMM-yyy or -
 
-gtDateapiformat
+Sring datemmmmformat  /// Return Date in MMMM or -
+
+Sring gtDateapiformat  /// Return Date in dd/MM/yyyy or -
+
+String custumDateFormat(String fomat) /// Return Date in your format or -
 
 ```
 
@@ -163,6 +173,12 @@ gtDateapiformat
  String get gtFileExt
 
  String get gtProperCase 
+
+ Future<bool> get gtIsFileExists
+
+ Future<List<int>> get gtUnit8ListByPath
+
+ Future<String> get gtBase64ByPath 
 ```
 
 ## Widget Extensions
