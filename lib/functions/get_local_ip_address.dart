@@ -1,6 +1,6 @@
 import 'dart:io';
 
-Future<String> gtLocalIpAddress() async {
+Future<String> get gtLocalIpAddress async {
   final interfaces = await NetworkInterface.list(
       type: InternetAddressType.IPv4, includeLinkLocal: true);
 

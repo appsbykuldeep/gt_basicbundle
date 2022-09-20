@@ -10,30 +10,28 @@ Collection of basic funtion/requremnt for creating flutter app
 import 'package:gt_basicbundle/gt_basicbundle.dart';
 ```
 
-## RegExp
+# RegExp
 
-Some Regular Exp
+## Some Regular Exp
 
 ```dart
-RegExp 
 gtexpNameAllow
 gtexpTextAllow
 gtextTextIntAllowWithoutspace
 gtexpIntAllow
 gtexpdoubleAllow
-
 ```
 
-## Dialogues
+# Dialogues
 
-Some Most Used dialogues
+## Some Most Used dialogues
 
 ```dart
 Future<bool> gtMakeconfirmation(
   String? titel,
   String content = "Are you sure ?",
   bool focusonyes = true,
-}
+)
 
 
 Future<GtFilePickerModel> gtRunFilePicker(
@@ -49,7 +47,7 @@ Future<GtFilePickerModel> runimagePicker(
   int compressQuality = 85,
 )
 
-gtShowLoading(
+void gtShowLoading(
   String? lable,
   String? heroid,
   bool lablebyctrl = false,
@@ -74,13 +72,11 @@ Future<DateTimeRange?> gtShowDateRangePickerDilogue(
   DateTime? lastDate,
   bool canchangedate = true,
 )
-
 ```
 
 
 
-## Powerfull Extensions
-#
+# Powerfull Extensions
 
 ## Color Extensions
 ```dart
@@ -100,7 +96,7 @@ Double togtdouble  //! retruns 0 on null
 
 int togtint  //! retruns 0 on null
 
-String togtString  //! retruns e"" on null
+String togtString  //! retruns "" on null
 
 String spelling   //! retruns Spelling of number
 
@@ -127,7 +123,7 @@ Sring gtCurrencyText  /// Return in ₹ ##,##,###.## format
 
 Sring gtThousentText  /// Return in ##,##,###.## format
 
-/// Use Below functions on Datetime
+/// Use Below functions on DateTime / String of DateTime  
 
 Sring gtDateddMMyyformat  /// Return Date in dd-MMM-yyy or -
 
@@ -189,22 +185,19 @@ String custumDateFormat(String fomat) /// Return Date in your format or -
       int delaymuliple = 1,
       DelayInFrom infrom = DelayInFrom.bottom)
 ```
-## List<String> Extensions (Fetch Data From Api Response/Map)
+## List of String Extensions (Fetch Data From Api Response/Map)
 ```dart
-  String fetchString(Map<String, dynamic> jsondata)
+ String fetchString(Map<String, dynamic> jsondata)
 
-  double fetchdouble(Map<String, dynamic> jsondata)
+ double fetchdouble(Map<String, dynamic> jsondata)
 
-  int fetchint(Map<String, dynamic> jsondata)
+ int fetchint(Map<String, dynamic> jsondata)
 
  dynamic fetchdynamic(Map<String, dynamic> jsondata)
-
 ```
 
-#
 
-## Important Functions
-#
+# Important Functions
 
 ## Api Call
 ```dart
@@ -248,16 +241,16 @@ Future<GTApiResponse> gtUploadFile(
 
 ## Get Device Ip 
 ```dart
-Future<String> gtLocalIpAddress()
+Future<String> get gtLocalIpAddress
 ```
 
 ## Device Orientation 
 ```dart
-void get gtPortraitModeOnly
+void get gtPortraitModeOnly // Lock Orientation in Portrait Mode
 
-void get gtLandscapeModeOnly
+void get gtLandscapeModeOnly // Lock Landscape in Portrait Mode
 
-void get gtEnableRotation
+void get gtEnableRotation // Unlock Rotation
 
 ```
 
@@ -272,10 +265,10 @@ List<int> gtSearchInList(
 )
 
 ```
-#
 
-## Some Widgets
-#
+
+# Some Widgets
+
 
 ## Action Bar Item
 ```dart
@@ -313,6 +306,7 @@ AnimatedListTile(
 
 
 ## Additional information
-#
-A Startup bundle created by Kuldeep Gupta PTPL
+A Startup bundle created by Kuldeep Gupta 
+This package is made for to reduce time loss for create new setup
+For any suggestion/Contact feel free to mail me on kuldeepgupta983@gmail.com
 
