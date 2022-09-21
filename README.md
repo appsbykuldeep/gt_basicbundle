@@ -5,6 +5,13 @@ Collection of basic funtion/requremnt for creating flutter app
 ## Note :  Use GetMaterialApp For Error Free Experience
 
 
+## Add In dependencie
+```dart
+gt_basicbundle:
+    git:
+      url: https://github.com/appsbykuldeep/gt_basicbundle
+```
+
 ## Installation
 ```dart
 import 'package:gt_basicbundle/gt_basicbundle.dart';
