@@ -1,4 +1,5 @@
 import 'package:gt_basicbundle/constants/custum_library.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 /// Showing dialog for make confirmation in Yes/No
 Future<bool> gtMakeconfirmation({
@@ -11,12 +12,12 @@ Future<bool> gtMakeconfirmation({
       barrierDismissible: false,
       builder: (context) {
         return AlertDialog(
-          backgroundColor: Get.theme.colorScheme.surface,
+          backgroundColor: context.backgroundColor,
           title: Text(
             (titel ?? "Confirmation"),
             maxLines: 2,
             style: TextStyle(
-              color: Get.theme.colorScheme.primary,
+              color: context.primaryColor,
               fontSize: 18,
               fontWeight: FontWeight.w700,
             ),
@@ -26,7 +27,7 @@ Future<bool> gtMakeconfirmation({
             softWrap: true,
             maxLines: 3,
             style: TextStyle(
-              color: Get.theme.colorScheme.onSurface,
+              color: context.backgroundColor,
               fontSize: 14,
               fontWeight: FontWeight.w600,
             ),
@@ -34,9 +35,9 @@ Future<bool> gtMakeconfirmation({
           actions: [
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: focusonyes
-                    ? Get.theme.colorScheme.surface
-                    : Get.theme.primaryColorDark,
+                // backgroundColor: focusonyes
+                //     ? Get.theme.colorScheme.surface
+                //     : Get.theme.primaryColorDark,
                 elevation: !focusonyes ? 5 : 0,
               ),
               onPressed: () {
@@ -52,9 +53,9 @@ Future<bool> gtMakeconfirmation({
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: focusonyes
-                    ? Get.theme.primaryColorDark
-                    : Get.theme.colorScheme.surface,
+                // backgroundColor: focusonyes
+                //     ? Get.theme.primaryColorDark
+                //     : Get.theme.colorScheme.surface,
                 elevation: focusonyes ? 5 : 0,
               ),
               onPressed: () {
