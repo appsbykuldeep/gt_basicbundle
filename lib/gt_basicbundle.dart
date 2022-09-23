@@ -32,3 +32,11 @@ export 'widgets/image_view.dart';
 export 'widgets/norecord_found.dart';
 export 'widgets/popupmenu_row.dart';
 export 'widgets/search_widget.dart';
+
+///
+export 'package:flutter/material.dart';
+export 'package:get/get.dart' hide BoolExtension, IntExtension, StringExtension;
+export 'package:get_storage/get_storage.dart';
+export 'package:image_picker/image_picker.dart';
+export 'package:path_provider/path_provider.dart';
+export 'package:animated_flip_counter/animated_flip_counter.dart';
