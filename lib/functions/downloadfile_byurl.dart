@@ -46,3 +46,11 @@ Future<DownloadFile> gtDownloadFileByUrl({
   }
   return backdata;
 }
+
+// _downloadinWebPlatform() {
+//   String content = "";
+//   AnchorElement(
+//       href: "data:application/octet-stream;charset=utf-16le;base64,$content")
+//     ..setAttribute("download", "file.csv")
+//     ..click();
+// }

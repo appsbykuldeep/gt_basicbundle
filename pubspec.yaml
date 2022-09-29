@@ -29,6 +29,9 @@ dependencies:
   pdfx: ^2.2.0
   number_to_words: ^1.0.0
   http_parser: ^4.0.1
+  universal_html: ^2.0.8
+  pdf: ^3.8.3
+  getwidget: ^3.0.1
 
 dev_dependencies:
   flutter_test:

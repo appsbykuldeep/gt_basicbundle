@@ -99,6 +99,20 @@ extension KdStringExt on String {
     return "";
   }
 
+  IconData get getfileIconData {
+    if (imageExtList.contains(this)) {
+      return Icons.image;
+    }
+
+    if ([
+      "pdf",
+    ].contains(this)) {
+      return Icons.picture_as_pdf;
+    }
+
+    return Icons.file_copy;
+  }
+
   Future<List<int>> get gtUnit8ListByPath async {
     final file = File(this);
     if (await file.exists()) {
@@ -132,6 +146,20 @@ extension KdStringExt on String {
 
   //   return url;
   // }
+
+  String get getfileType {
+    if (imageExtList.contains(this)) {
+      return "image";
+    }
+
+    if ([
+      "pdf",
+    ].contains(this)) {
+      return "pdf";
+    }
+
+    return "";
+  }
 
   String get countryFlagEmojicountryCode {
     final String currencyFlag = this;
@@ -192,3 +220,5 @@ String _getDateRangeTxt(DateTimeRange? date) {
     return "(${date.start.gtDateddMMyyformat} To ${date.end.gtDateddMMyyformat})";
   }
 }
+
+List<String> imageExtList = ['jpg', 'jpeg', 'png'];
