@@ -308,6 +308,13 @@ gtexpTextAllow
 gtextTextIntAllowWithoutspace
 gtexpIntAllow
 gtexpdoubleAllow
+
+// for use this Place In Text Field
+RegExp gtexpdoubleAllow = RegExp('[. 0-9]'); // use this type for create custom
+
+ inputFormatters: [
+FilteringTextInputFormatter.allow(gtexpdoubleAllow),
+ ],
 ```
 
 
