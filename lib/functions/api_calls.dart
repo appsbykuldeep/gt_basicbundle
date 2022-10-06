@@ -10,6 +10,7 @@ Future<GTApiResponse> gtBaseApiCall({
   Map<String, dynamic>? apibody,
   Map<String, String>? apiheders,
   bool? bygetmethod,
+  int timeout = 60,
 }) async {
   GTApiResponse responsemodel = GTApiResponse();
 
@@ -39,7 +40,7 @@ Future<GTApiResponse> gtBaseApiCall({
         Uri.parse(url),
         headers: headers,
       )
-          .timeout(60.seconds, onTimeout: () {
+          .timeout(timeout.seconds, onTimeout: () {
         return http.Response('Request Timeout', 408);
       });
     } else {
@@ -49,7 +50,7 @@ Future<GTApiResponse> gtBaseApiCall({
         body: jsonEncode(apibody),
         headers: headers,
       )
-          .timeout(60.seconds, onTimeout: () {
+          .timeout(timeout.seconds, onTimeout: () {
         return http.Response('Request Timeout', 408);
       });
     }
@@ -66,8 +67,7 @@ Future<GTApiResponse> gtBaseApiCall({
 
       responsemodel.resultData = gtDecodedynamicdata(
           ['resultData', 'resultdata'].fetchdynamic(gotdata));
-    }
-    if (responsemodel.statusCode == 408) {
+    } else if (responsemodel.statusCode == 408) {
       responsemodel.resultMsj = "Request Timeout";
     }
   } catch (e) {
