@@ -55,8 +55,6 @@ Future<GTApiResponse> gtBaseApiCall({
       });
     }
 
-    debugPrint(response.statusCode.toString());
-    debugPrint(response.body);
     if (response.statusCode == 200) {
       var gotdata = jsonDecode(response.body);
       responsemodel.statusCode = response.statusCode;
@@ -71,7 +69,6 @@ Future<GTApiResponse> gtBaseApiCall({
       responsemodel.resultMsj = "Request Timeout";
     }
   } catch (e) {
-    debugPrint("$url : $e");
     responsemodel.haveError = true;
     responsemodel.errorMsj = e.toString();
   }
