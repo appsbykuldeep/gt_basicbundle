@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 
-extension KDTransLate on String {
+extension GTTransLate on String {
   bool get _fullLocaleAndKey {
     return Get.translations.containsKey(
             "${Get.locale!.languageCode}_${Get.locale!.countryCode}") &&
