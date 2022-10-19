@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
-
+import 'package:gt_basicbundle/functions/launchers.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gt_basicbundle/extensions/dynamic_extension.dart';
@@ -62,6 +62,10 @@ extension KdStringExt on String {
       ),
     );
   }
+
+  Future<bool> get gtOpenUrl async => await gtOpenUrlfn(this);
+  Future<bool> get gtDialNumber async => await gtDialNumberfn(this);
+  Future<bool> get gtSendMail async => await gtSendMailWithSub(this);
 
   // IconData get getfileIconData {
   //   if (audioExtList.contains(this)) {
