@@ -3,7 +3,7 @@ extension KdFetchjsondata on List<String> {
     return _getString(
       otherkeys: this,
       jsondata: jsondata,
-    );
+    ).trim();
   }
 
   double fetchdouble(Map<String, dynamic> jsondata) {
