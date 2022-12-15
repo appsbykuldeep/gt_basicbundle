@@ -8,6 +8,7 @@ Future<DateTime?> gtShowDatePickerDilogue({
   DateTime? iniitalDate,
   DateTime? firstDate,
   DateTime? lastDate,
+  ThemeData? themeData,
   bool canchangedate = true,
 }) async {
   if (!canchangedate) return null;
@@ -19,7 +20,7 @@ Future<DateTime?> gtShowDatePickerDilogue({
       firstDate: firstDate ?? gtDateDiffrence(years: -2),
       lastDate: lastDate ?? gtDateDiffrence(years: 2),
       builder: (context, child) {
-        return Theme(data: ThemeData.light(), child: child!);
+        return Theme(data: themeData ?? ThemeData.light(), child: child!);
       });
   return date;
 }
