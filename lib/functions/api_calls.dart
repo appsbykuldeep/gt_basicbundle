@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:gt_basicbundle/functions/apiresponse_checker.dart';
@@ -34,7 +35,7 @@ Future<GTApiResponse> gtBaseApiCall({
 
   try {
     if (bygetmethod) {
-      url = url + _maptoquerryParams(apibody);
+      url = url + gtMaptoquerryParams(apibody);
       response = await http
           .get(
         Uri.parse(url),
@@ -76,7 +77,7 @@ Future<GTApiResponse> gtBaseApiCall({
   return responsemodel;
 }
 
-String _maptoquerryParams(Map<String, dynamic> data) {
+String gtMaptoquerryParams(Map<String, dynamic> data) {
   String querry = "?";
   data.forEach((key, value) {
     String param = "&$key=$value";
@@ -95,4 +96,12 @@ dynamic gtDecodedynamicdata(dynamic resultdata) {
   }
 
   return resultdata;
+}
+
+dynamic gtTryDecode(dynamic resultdata) {
+  try {
+    return jsonDecode(resultdata);
+  } catch (e) {
+    return resultdata;
+  }
 }

@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:number_to_words/number_to_words.dart';
-import 'package:intl/intl.dart';
 import 'package:animated_flip_counter/animated_flip_counter.dart';
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:number_to_words/number_to_words.dart';
 
 extension GTDynamicExtn on dynamic {
   double get togtdouble {
@@ -25,7 +25,7 @@ extension GTDynamicExtn on dynamic {
     }
   }
 
-  String get spelling {
+  String get gtSpelling {
     return NumberToWord().convert('en-in', this);
   }
 
@@ -33,10 +33,10 @@ extension GTDynamicExtn on dynamic {
     await Future.delayed(Duration(milliseconds: this));
   }
 
-  bool get isString => runtimeType == String;
-  bool get isint => runtimeType == int;
-  bool get isdouble => runtimeType == double;
-  bool get isList => runtimeType.toString().contains("List");
+  bool get gtIsString => runtimeType == String;
+  bool get gtIsint => runtimeType == int;
+  bool get gtIsdouble => runtimeType == double;
+  bool get gtIsList => runtimeType.toString().contains("List");
 
   Widget gtAnimateNumber(
       {String? family,
@@ -65,11 +65,15 @@ extension GTDynamicExtn on dynamic {
   }
 
   String get gtCurrencyText {
-    return "₹ ${NumberFormat("##,##,###.##", "en_US").format(apiDouble(this))}";
+    return "₹ ${NumberFormat("##,##,###.##", "en_US").format(togtdouble)}";
   }
 
   String get gtThousentText {
-    return NumberFormat("##,##,###.##", "en_US").format(apiDouble(this));
+    return NumberFormat("##,##,###.##", "en_US").format(togtdouble);
+  }
+
+  String gtCustomNumberFormat(String format) {
+    return NumberFormat(format, "en_US").format(togtdouble);
   }
 
   String get gtDateddMMyyformat => _setdatedata("dd-MMM-yyy");
@@ -88,7 +92,7 @@ extension GTDynamicExtn on dynamic {
 
   String get gtDateapiformat => _setdatedata("dd/MM/yyyy");
 
-  String custumDateFormat(String fomat) {
+  String gtcustumDateFormat(String fomat) {
     return _setdatedata(fomat);
   }
 
