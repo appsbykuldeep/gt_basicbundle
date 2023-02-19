@@ -1,5 +1,4 @@
-import 'package:animated_flip_counter/animated_flip_counter.dart';
-import 'package:flutter/material.dart';
+import 'package:gt_basicbundle/constants/custum_library.dart';
 import 'package:intl/intl.dart';
 import 'package:number_to_words/number_to_words.dart';
 
@@ -26,7 +25,9 @@ extension GTDynamicExtn on dynamic {
   }
 
   String get gtSpelling {
-    return NumberToWord().convert('en-in', this);
+    return "${togtint < 0 ? "minus" : ""}${NumberToWord().convert('en-in', togtint.abs())}"
+        .trim()
+        .gtProperCase;
   }
 
   Future<void> get gtDelay async {
