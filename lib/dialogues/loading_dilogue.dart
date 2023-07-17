@@ -1,7 +1,7 @@
 import 'package:gt_basicbundle/constants/custum_library.dart';
 
 /// Showing popup-Dialoge of Loading screen
-gtShowLoading({
+Future<void> gtShowLoading({
   String? lable,
   String? heroid,
   bool lablebyctrl = false,

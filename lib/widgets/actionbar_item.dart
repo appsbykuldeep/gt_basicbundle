@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gt_basicbundle/extensions/string_extension.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class ActionItem extends StatelessWidget {
@@ -31,7 +30,7 @@ class ActionItem extends StatelessWidget {
               color: color ?? Colors.white,
             ).expand(),
             2.heightBox,
-            label.gtTextbody(color: Colors.white),
+            Text(label),
           ],
         ),
       ),

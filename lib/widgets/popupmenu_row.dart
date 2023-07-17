@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gt_basicbundle/extensions/string_extension.dart';
 import 'package:gt_basicbundle/extensions/widget_extension.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -21,7 +20,7 @@ class PopupRow extends StatelessWidget {
           size: 20,
         ),
         2.widthBox,
-        lable.gtTextbody()
+        Text(lable),
       ],
     ).gtDelayDisplay();
   }

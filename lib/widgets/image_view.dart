@@ -1,7 +1,6 @@
-import 'package:get/get.dart';
-import 'package:gt_basicbundle/extensions/string_extension.dart';
-import 'package:photo_view/photo_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:photo_view/photo_view.dart';
 
 class PhotoViewer extends StatefulWidget {
   final String url;
@@ -27,7 +26,7 @@ class _PhotoViewerState extends State<PhotoViewer> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: widget.apptitel.gtApptitel(),
+        title: Text(widget.apptitel),
         backgroundColor: Colors.transparent,
       ),
       body: PhotoView(

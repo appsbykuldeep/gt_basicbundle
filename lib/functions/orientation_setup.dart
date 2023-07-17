@@ -1,20 +1,20 @@
 import 'package:flutter/services.dart';
 
-void get gtPortraitModeOnly {
+void gtPortraitModeOnly() {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
 }
 
-void get gtLandscapeModeOnly {
+void gtLandscapeModeOnly() {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.landscapeLeft,
     DeviceOrientation.landscapeRight,
   ]);
 }
 
-void get gtEnableRotation {
+void gtEnableRotation() {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,

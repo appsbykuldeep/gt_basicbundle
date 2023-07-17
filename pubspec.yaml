@@ -1,7 +1,7 @@
 name: gt_basicbundle
 description: A new Flutter package project.
 version: 0.0.1
-homepage: https://github.com/flutter-prjs/flutter_pkg
+homepage: https://github.com/appsbykuldeep/gt_basicbundle
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
@@ -46,8 +46,8 @@ dev_dependencies:
 flutter:
 
   # To add assets to your package, add an assets section, like this:
-  assets:
-    - assets/icons/
+  # assets:
+  #   - assets/icons/
   #   - images/a_dot_ham.jpeg
   #
   # For details regarding assets in packages, see

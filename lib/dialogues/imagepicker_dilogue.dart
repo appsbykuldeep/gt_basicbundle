@@ -3,12 +3,12 @@ import 'package:gt_basicbundle/constants/custum_library.dart';
 import 'package:gt_basicbundle/models/filepicker_model.dart';
 
 /// Showing option from bottom for pick image from Camera / Gallary f
-gtShowImagePickerSheet({
+Future<void> gtShowImagePickerSheet({
   required Function(GtFilePickerModel data) ontap,
   bool compress = true,
   int compressQuality = 85,
-}) {
-  Get.bottomSheet(
+}) async {
+  await Get.bottomSheet(
     Container(
       width: double.infinity,
       height: 180,
@@ -29,50 +29,52 @@ gtShowImagePickerSheet({
           ),
           Row(
             children: [
-              InkWell(
-                onTap: () async {
-                  Get.back();
-                  GtFilePickerModel data = await runimagePicker(
-                      fromcamera: true, compress: compress);
-                  ontap(data);
-                },
-                child: Expanded(
-                    child: Column(
-                  children: [
-                    ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Image.asset(
-                          "assets/icons/cameraicon.png",
-                          height: 100,
-                          fit: BoxFit.cover,
-                        )),
-                    "Camera".gtTextbody()
-                  ],
-                )),
+              Expanded(
+                child: InkWell(
+                  onTap: () async {
+                    Get.back();
+                    GtFilePickerModel data = await runimagePicker(
+                        fromcamera: true, compress: compress);
+                    ontap(data);
+                  },
+                  child: Column(
+                    children: [
+                      ClipRRect(
+                          borderRadius: BorderRadius.circular(50),
+                          child: Image.asset(
+                            "assets/icons/cameraicon.png",
+                            height: 100,
+                            fit: BoxFit.cover,
+                          )),
+                      "Camera".gtTextbody()
+                    ],
+                  ),
+                ),
               ),
-              InkWell(
-                onTap: () async {
-                  Get.back();
-                  GtFilePickerModel data = await runimagePicker(
-                    fromcamera: false,
-                    compress: compress,
-                    compressQuality: compressQuality,
-                  );
-                  ontap(data);
-                },
-                child: Expanded(
-                    child: Column(
-                  children: [
-                    ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Image.asset(
-                          "assets/icons/gallaryicon.png",
-                          height: 100,
-                          fit: BoxFit.cover,
-                        )),
-                    "Gallary".gtTextbody()
-                  ],
-                )),
+              Expanded(
+                child: InkWell(
+                  onTap: () async {
+                    Get.back();
+                    GtFilePickerModel data = await runimagePicker(
+                      fromcamera: false,
+                      compress: compress,
+                      compressQuality: compressQuality,
+                    );
+                    ontap(data);
+                  },
+                  child: Column(
+                    children: [
+                      ClipRRect(
+                          borderRadius: BorderRadius.circular(50),
+                          child: Image.asset(
+                            "assets/icons/gallaryicon.png",
+                            height: 100,
+                            fit: BoxFit.cover,
+                          )),
+                      "Gallary".gtTextbody()
+                    ],
+                  ),
+                ),
               ),
             ],
           ),

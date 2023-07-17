@@ -8,7 +8,7 @@ extension GTDynamicExtn on dynamic {
   }
 
   int get togtint {
-    return (int.tryParse("$this") ?? 0);
+    return togtdouble.toInt();
   }
 
   String get togtString {
@@ -98,55 +98,53 @@ extension GTDynamicExtn on dynamic {
   }
 
   String _setdatedata(String format) {
-    String showdate = "";
     final type = DateFormat(format, "en_US");
     try {
-      if (runtimeType.toString() == "DateTime") {
-        showdate = type.format(this);
+      if (runtimeType is DateTime) {
+        return type.format(this);
       } else {
-        showdate = type.format(DateTime.parse(this));
+        return type.format(DateTime.parse(this));
       }
     } catch (e) {
-      showdate = "-";
+      return "-";
     }
-    return showdate;
   }
 }
 
-extension MapExtn on Map<String, dynamic> {
-  double toMapdouble(String key) {
-    var val = this[key];
-    return (double.tryParse("$val") ?? 0);
-  }
+// extension MapExtn on Map<String, dynamic> {
+//   double toMapdouble(String key) {
+//     var val = this[key];
+//     return (double.tryParse("$val") ?? 0);
+//   }
 
-  int toMapint(String key) {
-    var val = this[key];
-    final type = val.runtimeType;
-    if (type is int) {
-      return val;
-    } else if (type is double) {
-      return (val as double).toInt();
-    } else {
-      return (int.tryParse(val.toString()) ?? 0);
-    }
-  }
+//   int toMapint(String key) {
+//     var val = this[key];
+//     final type = val.runtimeType;
+//     if (type is int) {
+//       return val;
+//     } else if (type is double) {
+//       return (val as double).toInt();
+//     } else {
+//       return (int.tryParse(val.toString()) ?? 0);
+//     }
+//   }
 
-  String toMapString(String key) {
-    var val = this[key];
-    if (val == null) {
-      return '';
-    } else {
-      return "$val";
-    }
-  }
+//   String toMapString(String key) {
+//     var val = this[key];
+//     if (val == null) {
+//       return '';
+//     } else {
+//       return "$val";
+//     }
+//   }
 
-  bool containLowerValue(String value) {
-    bool have = false;
-    forEach((key, datavalue) {
-      if (datavalue.toString().toLowerCase().contains(value.toLowerCase())) {
-        have = true;
-      }
-    });
-    return have;
-  }
-}
+//   bool containLowerValue(String ßvalue) {
+//     bool have = false;
+//     forEach((key, datavalue) {
+//       if (datavalue.toString().toLowerCase().contains(value.toLowerCase())) {
+//         have = true;
+//       }
+//     });
+//     return have;
+//   }
+// }

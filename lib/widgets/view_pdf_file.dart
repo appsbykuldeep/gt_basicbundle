@@ -2,7 +2,6 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gt_basicbundle/extensions/string_extension.dart';
 import 'package:pdfx/pdfx.dart';
 
 class ViewPdfFile extends StatefulWidget {
@@ -63,8 +62,9 @@ class _ViewPdfFileState extends State<ViewPdfFile> {
             padding: const EdgeInsets.fromLTRB(0, 5, 15, 5),
             child: Obx(
               () {
-                return "${currentPage.value}/${totalpageCount.value} Page"
-                    .gtTextbody(size: 16, color: Colors.white);
+                return Text(
+                  "${currentPage.value}/${totalpageCount.value} Page",
+                );
               },
             ),
           ),
